@@ -20,6 +20,17 @@ ActiveRecord::Schema.define(version: 20180310134042) do
     t.integer "points", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+
+  create_table "neighbours", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.string "email"
+    t.string "city"
+    t.string "street"
+    t.string "building_house"
+    t.string "postcode"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
