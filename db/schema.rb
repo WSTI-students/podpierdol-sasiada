@@ -12,11 +12,11 @@
 
 ActiveRecord::Schema.define(version: 20180310134042) do
 
-  create_table "recipients_tables", force: :cascade do |t|
+  create_table "recipients", force: :cascade do |t|
     t.string "name"
     t.string "email"
     t.string "adress"
-    t.integer "phone_number"
+    t.string "phone_number"
     t.integer "points"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
