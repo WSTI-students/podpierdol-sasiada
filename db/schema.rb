@@ -15,9 +15,9 @@ ActiveRecord::Schema.define(version: 20180310134042) do
   create_table "recipients", force: :cascade do |t|
     t.string "name"
     t.string "email"
-    t.string "adress"
+    t.string "address"
     t.string "phone_number"
-    t.integer "points"
+    t.integer "points", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
