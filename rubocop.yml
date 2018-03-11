@@ -7,8 +7,6 @@ AllCops:
     - config/**/*
 Metrics/LineLength:
   Max: 100
-Style/StringLiterals:
-  Enabled: false
 AlignParameters:
   Enabled: false
 Documentation:
@@ -30,5 +28,13 @@ Style/MultilineMethodCallIndentation:
 Style/DotPosition:
   EnforcedStyle: leading
 Style/FrozenStringLiteralComment:
+  Enabled: false
+Style/StringLiterals:
+  Enabled: false
+Style/StringLiteralsInInterpolation:
+  Enabled: false
+Naming/FileName:
+  Enabled: false
+Style/ClassAndModuleChildren:
   Enabled: false
 
