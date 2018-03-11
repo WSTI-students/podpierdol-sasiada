@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180311112107) do
+ActiveRecord::Schema.define(version: 20180311120545) do
+
+  create_table "complaints", force: :cascade do |t|
+    t.string "title", default: "", null: false
+    t.string "signature_type", default: "anonymous", null: false
+    t.text "description"
+    t.string "status", default: "draft", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "neighbours", force: :cascade do |t|
     t.string "first_name"
