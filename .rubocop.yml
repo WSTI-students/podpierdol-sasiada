@@ -3,8 +3,9 @@ AllCops:
     - Rakefile
     - config.ru
   Exclude:
-    - db/**/*
+    - bin/**/*
     - config/**/*
+    - db/**/*
 AlignParameters:
   Enabled: false
 Documentation:
