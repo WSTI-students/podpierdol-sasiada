@@ -1,2 +1,2 @@
-class Neighbour < ApplicationRecord 
-end    
+class Neighbour < ApplicationRecord
+end
