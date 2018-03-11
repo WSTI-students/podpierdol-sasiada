@@ -1,2 +1,4 @@
-class Complaint < ApplicationRecord; end
+class Complaint < ApplicationRecord
+  has_one :neighbour
+end
 
