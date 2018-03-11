@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180311135454) do
+ActiveRecord::Schema.define(version: 20180311143805) do
 
   create_table "complaints", force: :cascade do |t|
     t.string "title", default: "", null: false
@@ -23,6 +23,13 @@ ActiveRecord::Schema.define(version: 20180311135454) do
     t.index ["user_id"], name: "index_complaints_on_user_id"
     t.integer "recipient_id"
     t.index ["recipient_id"], name: "index_complaints_on_recipient_id"
+  end
+
+  create_table "confirmations", force: :cascade do |t|
+    t.integer "complaint_id"
+    t.integer "user_id"
+    t.index ["complaint_id"], name: "index_confirmations_on_complaint_id"
+    t.index ["user_id"], name: "index_confirmations_on_user_id"
   end
 
   create_table "neighbours", force: :cascade do |t|
