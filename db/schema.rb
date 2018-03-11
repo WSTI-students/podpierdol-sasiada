@@ -19,6 +19,8 @@ ActiveRecord::Schema.define(version: 20180311135454) do
     t.string "status", default: "draft", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
+    t.index ["user_id"], name: "index_complaints_on_user_id"
     t.integer "recipient_id"
     t.index ["recipient_id"], name: "index_complaints_on_recipient_id"
   end
