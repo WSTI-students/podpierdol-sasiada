@@ -1,6 +1,8 @@
 class Complaint < ApplicationRecord
+  belongs_to :recipient
   belongs_to :user
   alias_attribute :author, :user
   has_one :neighbour
-  belongs_to :recipient
+  has_many :confirmations
+  has_many :confirmers, through: :confirmations, source: :user
 end

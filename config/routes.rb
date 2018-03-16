@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
+  root to: 'complaints#index'
 
-  get '/recipients', to: "recipients#index"
+  get '/complaints', to: 'complaints#index'
 end
 
