@@ -2,7 +2,8 @@
 .complaints
 - @complaints.each do |complaint|
   .complaint
-    %ul
-      %li= complaint.title
-      %li= complaint.description
-      %li= complaint.confirmers.count
+    %p= complaint.title
+    %p= complaint.description
+    %ul 
+      - complaint.confirmers.each do |confirmer|
+        %li= "#{confirmer.first_name} #{confirmer.last_name}" 
