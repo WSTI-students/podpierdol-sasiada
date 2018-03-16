@@ -1,11 +1,11 @@
 %header.navbar.navbar-expand-lg.navbar-light.bg-light
   = link_to 'Podpierdol sąsiada', root_path, id: 'logo', class: 'navbar-brand'
-  %button.navbar-toggler{type: 'button', 
-                         data: {toggle: "collapse", 
-                                target: "#navbarNavAltMarkup"},
-                         aria: {controls: "navbarNavAltMarkup",
-                                expanded: "false",
-                                label: "Toggle navigation"}}
+  %button.navbar-toggler{ type: 'button', 
+                          data: { toggle: "collapse", 
+                                  target: "#navbarNavAltMarkup" },
+                          aria: { controls: "navbarNavAltMarkup",
+                                  expanded: "false",
+                                  label: "Toggle navigation" } }
   .collapse.navbar-collapse#navbarNavAltMarkup
     %ul.navbar-nav.ml-auto
       %li.nav-item= link_to 'Ranking', '#', class: 'nav-link'
@@ -13,12 +13,12 @@
         %li.nav-item= link_to 'Zaloguj się', new_user_session_path, class: 'nav-link' 
       - else  
         %li.nav-item.dropdown
-          %a.nav-link.dropdown-toggle#navbarDropdownMenuLink{href: "#",
-                                                             data: {toggle: "dropdown"},
-                                                             aria: {haspopup: "true",
-                                                               expanded: "false"}}
+          %a.nav-link.dropdown-toggle#navbarDropdownMenuLink{ href: "#",
+                                                              data: { toggle: "dropdown" },
+                                                              aria: { haspopup: "true",
+                                                              expanded: "false" } }
             Użytkownik                                                   
-          .dropdown-menu{aria: {labbeledby: "navbarDropdownMenuLink"}}                                                           
+          .dropdown-menu{ aria: { labbeledby: "navbarDropdownMenuLink" } }                                                           
             = link_to 'Edytuj dane', edit_user_registration_path, class: "dropdown-item"
             = link_to 'Wyloguj', destroy_user_session_path, method: :delete, class: "dropdown-item"
       %li.nav-item= link_to 'Podpierdol', '#', class: 'nav-link btn btn-primary text-light'
