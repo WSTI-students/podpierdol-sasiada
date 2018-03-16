@@ -6,11 +6,12 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-users = User.create!([{email: "mail4@test.pl", first_name: "Kermit", last_name: "Frog",
- nickname: "kermitFrog", password: "kermitkermit"},
- {email: "mail1@test.pl", first_name: "Kulfon", last_name: "Maly",
- nickname: "kulfonMaly", password: "kulfonkulfon"},
- {email: "mail2@test.pl", first_name: "Muppet", last_name: "Show",
- nickname: "muppetShow", password: "muppetmuppet"},
- {email: "mail3@test.pl", first_name: "Maruda", last_name: "Smerf",
- nickname: "smerfMaruda", password: "smerfsmerf"}])
+users = [{ :first_name => "Kermit", :last_name => "Frog"},
+{:first_name => "Kulfon", :last_name => "Maly"},
+{:first_name => "Muppet", :last_name => "Show"},
+{:first_name => "Maruda", :last_name => "Smerf"}]
+
+users.each { |el| User.create!( email: "#{el[:first_name]}@mail.com",
+first_name: "#{el[:first_name]}", last_name:"#{el[:last_name]}",
+nickname: "nick_#{el[:first_name]}", password: "pass_#{el[:first_name]}" ) }
+
