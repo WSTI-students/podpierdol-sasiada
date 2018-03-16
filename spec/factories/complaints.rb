@@ -7,8 +7,10 @@ FactoryBot.define do
     association :user, factory: :user
     association :recipient, factory: :recipient
 
-    after(:create) do |complaint|
-      complaint.confirmers << create_list(:user, 10)
+    factory :confirmed_complaint do
+      after(:create) do |complaint|
+        complaint.confirmers << create_list(:user, 10)
+      end
     end
   end
 end
