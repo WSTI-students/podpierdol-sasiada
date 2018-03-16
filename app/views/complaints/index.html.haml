@@ -1,2 +1,8 @@
 %h1 Complaints
-%p test
+.complaints
+- @complaints.each do |complaint|
+  .complaint
+    %ul
+      %li= complaint.title
+      %li= complaint.description
+      %li= complaint.confirmers.count
