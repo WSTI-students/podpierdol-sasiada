@@ -1,2 +1,9 @@
 %h1 Complaints
-%p test
+.complaints
+- @complaints.each do |complaint|
+  .complaint
+    %p= complaint.title
+    %p= complaint.description
+    %ul 
+      - complaint.confirmers.each do |confirmer|
+        %li= "#{confirmer.first_name} #{confirmer.last_name}" 

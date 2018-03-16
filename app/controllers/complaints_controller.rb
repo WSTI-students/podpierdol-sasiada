@@ -1,3 +1,5 @@
 class ComplaintsController < ApplicationController
-  def index; end
+  def index
+    @complaints = Complaint.all
+  end
 end
