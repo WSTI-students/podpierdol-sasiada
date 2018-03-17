@@ -1,5 +1,5 @@
 class ComplaintsController < ApplicationController
   def index
-    @complaints = Complaint.all
+    @complaints = Complaint.includes(:confirmers).all
   end
 end
