@@ -1,4 +1,6 @@
 class ComplaintConfirmer
+  attr_reader :complaint, :user
+
   def initialize(complaint:, user:)
     @complaint = complaint
     @user = user
@@ -16,8 +18,5 @@ class ComplaintConfirmer
     else
       complaint.confirmers << user
     end  
-    complaint.save
   end
-
-  attr_reader :complaint, :user
 end
