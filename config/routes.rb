@@ -3,5 +3,6 @@ Rails.application.routes.draw do
   root to: 'complaints#index'
 
   get '/complaints', to: 'complaints#index'
+  get '/snitchs', to: 'snitchs#index'
 end
 
