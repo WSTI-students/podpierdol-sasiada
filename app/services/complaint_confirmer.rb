@@ -17,6 +17,6 @@ class ComplaintConfirmer
       complaint.confirmers.delete(user)
     else
       complaint.confirmers << user
-    end  
+    end
   end
 end
