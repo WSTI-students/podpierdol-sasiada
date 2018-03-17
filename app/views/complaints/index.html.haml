@@ -1,9 +1,11 @@
-%h1 Complaints
-.complaints
-- @complaints.each do |complaint|
-  .complaint
-    %p= complaint.title
-    %p= complaint.description
-    %ul 
-      - complaint.confirmers.each do |confirmer|
-        %li= "#{confirmer.first_name} #{confirmer.last_name}" 
+.container.complaints
+  .row.justify-content-center
+    %h1.col-2 Complaints
+  .row.justify-content-center
+    - @complaints.each do |complaint|
+      .complaint.col-8
+        %p= complaint.title
+        %p= complaint.description
+        %ul.complaint-confirmers 
+          - complaint.confirmers.each do |confirmer|
+            %li= "#{confirmer.first_name} #{confirmer.last_name}" 
