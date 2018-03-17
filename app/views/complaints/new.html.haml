@@ -8,10 +8,8 @@
       .form-group.col-md-6
         %label{ for: "instytucja" } Insystucja
         %select#recipient.form-control
-          %option To
-          %option jest
-          %option test
-          %option Lukasz
+          = @recipients.each do |recipient|
+            %option= recipient.name
       .form-group.col-md-6
         %label{ for: "podpis" } Podpis
         %select#signatureType.form-control
