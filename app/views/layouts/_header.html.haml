@@ -21,4 +21,4 @@
           .dropdown-menu{ aria: { labbeledby: "navbarDropdownMenuLink" } }                                                           
             = link_to 'Edytuj dane', edit_user_registration_path, class: "dropdown-item"
             = link_to 'Wyloguj', destroy_user_session_path, method: :delete, class: "dropdown-item"
-      %li.nav-item= link_to 'Podpierdol', '#', class: 'nav-link btn btn-primary text-light'
+      %li.nav-item= link_to 'Podpierdol', new_path, class: 'nav-link btn btn-primary text-light'
