@@ -6,6 +6,8 @@
       .complaint.col-8
         %p= complaint.title
         %p= complaint.description
-        %ul.complaint-confirmers 
-          - complaint.confirmers.each do |confirmer|
-            %li= "#{confirmer.first_name} #{confirmer.last_name}" 
+        - if user_signed_in?
+          = link_to confirm_btn_label(complaint), 
+                    confirm_complaint_url(complaint), 
+                    class: "btn btn-outline-primary"
+
