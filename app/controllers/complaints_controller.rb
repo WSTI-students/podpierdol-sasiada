@@ -4,7 +4,7 @@ class ComplaintsController < ApplicationController
   end
 
   def new
-    complaint_form = ComplaintForm.new(complaint_params)
+    complaint_form = ComplaintForm.new
     recipients = Complaint.all_recipients
 
     render locals: { complaint_form: complaint_form, recipients: recipients }
