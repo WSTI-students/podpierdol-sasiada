@@ -6,7 +6,7 @@ module ComplaintsHelper
   end
 
   def confirm_btn_class(complaint, user)
-    return "btn btn-primary" unless user
-    complaint.confirmers.include?(user) ? "btn btn-primary" : "btn btn-outline-primary"
+    return "btn btn-outline-primary" unless complaint.confirmers.include?(user) 
+    "btn btn-primary"
   end
 end
