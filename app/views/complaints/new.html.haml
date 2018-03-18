@@ -2,7 +2,7 @@
   .h1.topic Podpierdol Dziada
   %form
     .form-group
-      %label{ for: "inputtytulAddress" } Tytul
+      %label{ for: "tytul" } Tytul
       %input#title.form-control{ placeholder: "Somsiad kupil nowy automobil. Skond mial piniondze?", type: "text" }/
     .form-row
       .form-group.col-md-6
@@ -42,14 +42,11 @@
     .form-group
       %label{ for: "coOdjebal" } Co odjebal
       %textarea#description.form-control{ placeholder: "Paczam hey przez window w familoku, a mieszkam na 2 pietrze to widza, ze Kowlski podjezdza nowym meskiem. Zlodziej pewnie ukradl. Pozdrawiam Janusz Ruchacz z familoka 2 obok nowej bezdomki. - Przyklad", rows: "3" }
-    .form-group
-      %label{ for: "plikZOdjebka" } Dodaj zjdeie lub film z odjebka
-      %input#file.form-control-file{ type: "file" }
     .form-row
       .form-group.col-md-4
-        .butto.btn.btn-warning.btn-block Nich sie boi
+        .butto.btn.btn-warning.btn-block{ title: "Ostrzezenie podpierdalanego" } Nich sie boi
       .form-group.col-md-4
-        .butto.btn.btn-danger.btn-block Podpierdalam
+        .butto.btn.btn-danger.btn-block{ title: "Dzwonie na psy" } Podpierdalam
       .form-group.col-md-4
-        .butto.btn.btn-success.btn-block All In
+        .butto.btn.btn-success.btn-block{ title: "Podpierdalam i niech wie" } All In
 
