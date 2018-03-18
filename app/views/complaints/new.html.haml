@@ -1,36 +1,58 @@
-.container
-  = form_with model: @complaint, local: true do |form|
-    .row.justify-content-center
-      .col-2.info
-        = form.label "Title: " 
-      .col-6.info.field
-        = form.text_field :first_name
-    .row.justify-content-center
-      .col-2.info
-        = form.label "TO JEST TEST LUKASZ: "
-      .col-6.info.field
-        = form.text_field :recipient
-    .row.justify-content-center
-      .col-2.info
-        = form.label "TO JEST TEST LUKASZ: "
-      .col-6.info.field
-        = form.text_field :recipient
-    .row.justify-content-center
-      .col-2.info
-        = form.label "TO JEST TEST LUKASZ: "
-      .col-6.info.field
-        = form.text_field :recipient
-    .row.justify-content-center
-      .col-2.info
-        = form.label "TO JEST TEST LUKASZ: "
-      .col-6.info.field
-        = form.text_field :recipient
-    .row.justify-content-center
-      .col-2.info
-        = form.label "TO JEST TEST LUKASZ: "
-      .col-6.info
-        = form.text_field :recipient
-    .row.justify-content-center
-      .col-1
-        = form.submit "Podpierdalam!", class: 'btn btn-primary'
-    
+.container.complaint-page
+  .h1.topic Podpierdol Dziada
+  %form
+    .form-group
+      %label{ for: "inputtytulAddress" } Tytul
+      %input#title.form-control{ placeholder: "Somsiad kupil nowy automobil. Skond mial piniondze?", type: "text" }/
+    .form-row
+      .form-group.col-md-6
+        %label{ for: "instytucja" } Insystucja
+        %select#recipient.form-control
+          %option To
+          %option jest
+          %option test
+          %option Lukasz
+      .form-group.col-md-6
+        %label{ for: "podpis" } Podpis
+        %select#signatureType.form-control
+          %option To
+          %option jest
+          %option test
+          %option Lukasz
+    .form-row
+      .form-group.col-md-6
+        %label{ for: "imie" } Imie
+        %input#name.form-control{ placeholder: "Janusz", type: "text" }/
+      .form-group.col-md-6
+        %label{ for: "nazwisko" } Nazwisko
+        %input#lastName.form-control{ placeholder: "Ruchacz", type: "text" }/     
+    .form-group
+      %label{ for: "email" } Email podpierdalanego
+      %input#emial.form-control{ placeholder: "Yanush@polaczkicebulaczki.pl", type: "email" }/
+    .form-row
+      .form-group.col-md-5
+        %label{ for: "miasto" } Miasto
+        %input#city.form-control{ placeholder: "Warszawa", type: "text" }/
+      .form-group.col-md-4
+        %label{ for: "wojewodztwo" } Wojewodztwo
+        %input#state.form-control{ placeholder: "Mazowieckie", type: "text" }/
+      .form-group.col-md-3
+        %label{ for: "kodPocztowy" } Kod pocztowy
+        %input#zipCode.form-control{ placeholder: "07-666", type: "text" }/
+    .form-group
+      %label{ for: "ulicaINumer" } Ulica i numer
+      %input#street.form-control{ placeholder: "Ruda 102", type: "text" }/
+    .form-group
+      %label{ for: "coOdjebal" } Co odjebal
+      %textarea#description.form-control{ placeholder: "Paczam hey przez window w familoku, a mieszkam na 2 pietrze to widza, ze Kowlski podjezdza nowym meskiem. Zlodziej pewnie ukradl. Pozdrawiam Janusz Ruchacz z familoka 2 obok nowej bezdomki. - Przyklad", rows: "3" }
+    .form-group
+      %label{ for: "plikZOdjebka" } Dodaj zjdeie lub film z odjebka
+      %input#file.form-control-file{ type: "file" }
+    .form-row
+      .form-group.col-md-4
+        .butto.btn.btn-warning.btn-block Nich sie boi
+      .form-group.col-md-4
+        .butto.btn.btn-danger.btn-block Podpierdalam
+      .form-group.col-md-4
+        .butto.btn.btn-success.btn-block All In
+

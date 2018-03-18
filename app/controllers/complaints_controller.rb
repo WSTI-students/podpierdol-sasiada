@@ -6,4 +6,11 @@ class ComplaintsController < ApplicationController
   def new
     @complaint = Complaint.new
   end
+
+  def confirm
+    @complaint = Complaint.find(params[:complaint_id])
+    ComplaintConfirmer.new(complaint: @complaint, user: current_user).call
+
+    redirect_to root_path
+  end
 end

@@ -3,6 +3,7 @@
 
 /* Sticky footer */
 
+
 .footer {
   position: relative;
   bottom: 0;
@@ -15,6 +16,12 @@
   }
 }
 
-.info {
-  padding: 12px;
+.complaint-page {
+  padding-right: 20%;
+  padding-left: 20%;
+}
+
+.topic {
+  text-align: center;
+  text-decoration-style: dashed;
 }
