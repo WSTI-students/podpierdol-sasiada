@@ -5,6 +5,7 @@ class ComplaintsController < ApplicationController
 
   def new
     @complaint = Complaint.new
+    @recipients = Complaint.all_recipients
   end
 
   def confirm

@@ -5,4 +5,8 @@ class Complaint < ApplicationRecord
   has_one :neighbour
   has_many :confirmations
   has_many :confirmers, through: :confirmations, source: :user
+
+  def self.all_recipients
+    Recipient.all
+  end
 end
