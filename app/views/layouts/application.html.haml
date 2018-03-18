@@ -8,10 +8,6 @@
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
     = render 'layouts/header'
-    - flash.each do |type, msg|
-      - if type == "notice"
-        %p.alert.alert.alert-success{role: "alert"}= msg
-      - else type == "alert"
-        %p.alert.alert.alert-danger{role: "alert"}= msg
+    - message(flash)
     = yield
     = render 'layouts/footer'
