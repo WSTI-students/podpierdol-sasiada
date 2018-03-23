@@ -1,28 +1,47 @@
 .container.complaint-page
   .h1.topic Podpierdol Dziada
-  = form_for @complaint do |f|
-    = f.label :title
-    = f.text_field :title
-    = f.label :recipient
-    = f.collection_select :recipient_id, @recipients, :id, :name, include_blank: true
-    = f.label :signature_type
-    = f.collection_select :signature_type, %w(Anonymouse Nickname Your\ Firstname\ and\ Lastname), :to_s, :titleize, :prompt => true 
-    = f.label :first_name
-    = f.text_field :first_name
-    = f.label :last_name
-    = f.text_field :last_name
-    = f.label :email
-    = f.text_field :email
-    = f.label :city
-    = f.text_field :city
-    = f.label :state
-    = f.text_field :state
-    = f.label :zip_code
-    = f.text_field :zip_code
-    = f.label :street_and_number
-    = f.text_field :street_and_number
-    = f.label :description
-    = f.text_field :description
-    = f.submit :warning
-    = f.submit :danger
-    = f.submit :success
+  = form_for :complaint_form do |f|
+    .form
+      .form-group
+        = f.label :title
+        %p= f.text_field :title, html: { class: 'form-control' }
+      .form-row
+        .form-group.col-md-6
+          = f.label :recipient
+          %p= f.collection_select :recipient_id, recipients, :id, :name, include_blank: true
+        .form-group.col-md-6
+          = f.label :signature_type
+          %p= f.collection_select :signature_type, %w(Anonymouse Nickname Your\ Firstname\ and\ Lastname), :to_s, :titleize, :prompt => true 
+      .form-row
+        .form-group.col-md-6
+          = f.label :first_name
+          %p= f.text_field :first_name
+        .form-group.col-md-6
+          = f.label :last_name
+          %p= f.text_field :last_name
+      .form-group
+        = f.label :email
+        %p= f.text_field :email
+      .form-row
+        .form-group.col-md-5
+          = f.label :city
+          %p= f.text_field :city
+        .form-group.col-md-4
+          = f.label :state
+          %p= f.text_field :state
+        .form-group.col-md-3
+          = f.label :zip_code
+          %p= f.text_field :zip_code
+      .form-group
+        = f.label :street_and_number
+        %p= f.text_field :street_and_number
+      .form-group
+        = f.label :description
+        %p= f.text_area :description
+      .form-row
+        .form-group.col-md-4
+          = f.submit :warning
+        .form-group.col-md-4
+          = f.submit :danger
+        .form-group.col-md-4
+          = f.submit :success
