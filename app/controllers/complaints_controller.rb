@@ -4,14 +4,14 @@ class ComplaintsController < ApplicationController
   end
 
   def new
-    complaint_form = ComplaintForm.new
+    complaint_form = Complaint.new
     recipients = Complaint.all_recipients
 
     render locals: { complaint_form: complaint_form, recipients: recipients }
   end
 
   def create
-    complaint_form = ComplaintForm.new(complaint_params)
+    complaint_form = Complaint.new(complaint_params)
     ComplaintCreator.new(form: complaint_form, user: current_user).call
 
     flash[:notice] = "Podpierdolono sąsiada"
@@ -28,6 +28,6 @@ class ComplaintsController < ApplicationController
   private
 
   def complaint_params
-    params.require(:complaint_form).permit(:complaint_title) 
+    params.require(:complaint_form).permit(:complaint_title)
   end
 end

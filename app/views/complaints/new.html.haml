@@ -1,52 +1,47 @@
 .container.complaint-page
   .h1.topic Podpierdol Dziada
-  %form
-    .form-group
-      %label{ for: "tytul" } Tytul
-      %input#title.form-control{ placeholder: "Somsiad kupil nowy automobil. Skond mial piniondze?", type: "text" }/
-    .form-row
-      .form-group.col-md-6
-        %label{ for: "instytucja" } Insystucja
-        %select#recipient.form-control
-          = @recipients.each do |recipient|
-            %option= recipient.name
-      .form-group.col-md-6
-        %label{ for: "podpis" } Podpis
-        %select#signatureType.form-control
-          %option Anonymouse
-          %option Nickname
-          %option Your Firstname and Lastname
-    .form-row
-      .form-group.col-md-6
-        %label{ for: "imie" } Imie
-        %input#name.form-control{ placeholder: "Janusz", type: "text" }/
-      .form-group.col-md-6
-        %label{ for: "nazwisko" } Nazwisko
-        %input#lastName.form-control{ placeholder: "Ruchacz", type: "text" }/     
-    .form-group
-      %label{ for: "email" } Email podpierdalanego
-      %input#emial.form-control{ placeholder: "Yanush@polaczkicebulaczki.pl", type: "email" }/
-    .form-row
-      .form-group.col-md-5
-        %label{ for: "miasto" } Miasto
-        %input#city.form-control{ placeholder: "Warszawa", type: "text" }/
-      .form-group.col-md-4
-        %label{ for: "wojewodztwo" } Wojewodztwo
-        %input#state.form-control{ placeholder: "Mazowieckie", type: "text" }/
-      .form-group.col-md-3
-        %label{ for: "kodPocztowy" } Kod pocztowy
-        %input#zipCode.form-control{ placeholder: "07-666", type: "text" }/
-    .form-group
-      %label{ for: "ulicaINumer" } Ulica i numer
-      %input#street.form-control{ placeholder: "Ruda 102", type: "text" }/
-    .form-group
-      %label{ for: "coOdjebal" } Co odjebal
-      %textarea#description.form-control{ placeholder: "Paczam hey przez window w familoku, a mieszkam na 2 pietrze to widza, ze Kowlski podjezdza nowym meskiem. Zlodziej pewnie ukradl. Pozdrawiam Janusz Ruchacz z familoka 2 obok nowej bezdomki. - Przyklad", rows: "3" }
-    .form-row
-      .form-group.col-md-4
-        .butto.btn.btn-warning.btn-block{ title: "Ostrzezenie podpierdalanego" } Nich sie boi
-      .form-group.col-md-4
-        .butto.btn.btn-danger.btn-block{ title: "Dzwonie na psy" } Podpierdalam
-      .form-group.col-md-4
-        .butto.btn.btn-success.btn-block{ title: "Podpierdalam i niech wie" } All In
-
+  = form_for :complaint_form do |f|
+    .form
+      .form-group
+        = f.label :title
+        %p= f.text_field :title, html: { class: 'form-control' }
+      .form-row
+        .form-group.col-md-6
+          = f.label :recipient
+          %p= f.collection_select :recipient_id, recipients, :id, :name, include_blank: true
+        .form-group.col-md-6
+          = f.label :signature_type
+          %p= f.collection_select :signature_type, %w(Anonymouse Nickname Your\ Firstname\ and\ Lastname), :to_s, :titleize, :prompt => true 
+      .form-row
+        .form-group.col-md-6
+          = f.label :first_name
+          %p= f.text_field :first_name
+        .form-group.col-md-6
+          = f.label :last_name
+          %p= f.text_field :last_name
+      .form-group
+        = f.label :email
+        %p= f.text_field :email
+      .form-row
+        .form-group.col-md-5
+          = f.label :city
+          %p= f.text_field :city
+        .form-group.col-md-4
+          = f.label :state
+          %p= f.text_field :state
+        .form-group.col-md-3
+          = f.label :zip_code
+          %p= f.text_field :zip_code
+      .form-group
+        = f.label :street_and_number
+        %p= f.text_field :street_and_number
+      .form-group
+        = f.label :description
+        %p= f.text_area :description
+      .form-row
+        .form-group.col-md-4
+          = f.submit :warning
+        .form-group.col-md-4
+          = f.submit :danger
+        .form-group.col-md-4
+          = f.submit :success
